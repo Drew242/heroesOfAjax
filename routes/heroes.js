@@ -9,8 +9,15 @@ var Hero = require('../models/hero');
 
 module.exports = {
     get : (req, res) => {
-        // Read
-        Hero.find({}, function(err, heroes){
+        // Read w/o populate
+        // Hero.find({}, function(err, heroes){
+        //     res.json(heroes);
+        // });
+
+        // Read with populate
+        Hero.find({})
+            .populate('headquarters')
+            .exec(function(err, heroes){
             res.json(heroes);
         });
     },

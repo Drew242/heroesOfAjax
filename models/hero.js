@@ -5,7 +5,10 @@ var heroSchema = mongoose.Schema({
     name:       {type : String},
     powers:     {type : Array, default : []},
     weaknesses: {type : Array, default : []},
-    HQ:         {type : String},
+    headquarters:         {
+            type : mongoose.Schema.ObjectId,
+            ref  : 'HQ' // Collection name as MONGOOSE understands it 
+    },
     sidekick:   {
         name : {type : String},
         caped: {type : Boolean}
