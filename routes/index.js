@@ -1,4 +1,5 @@
 var heroCtrl = require('./heroes');
+var hqCtrl   = require('./hqs');
 // var otherCtrl = require('./other');
 
 module.exports = (app) => {
